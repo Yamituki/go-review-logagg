@@ -9,8 +9,8 @@ import "time"
 type LogEntry struct {
 	// Logのタイムスタンプ
 	Timestamp time.Time `json:"timestamp"`
-	// Logのレベル (例: INFO, ERROR)
-	Level string `json:"level"`
+	// Logのレベル INFO, ERROR, WARN
+	Level string `json:"level" enum:"INFO,ERROR,WARN"`
 	// Logのメッセージ内容
 	Message string `json:"message"`
 	// Logの発生源 (例: サービス名やホスト名)
