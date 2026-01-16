@@ -48,3 +48,31 @@ func (fr *FileReader) ReadLine() (string, error) {
 
 	return "", nil
 }
+
+// ReadAllLines はファイルからすべての行を読み込み、文字列のスライスとして返します。
+func (fr *FileReader) ReadAllLines() ([]string, error) {
+	// ファイルを開く
+	file, err := os.Open(fr.filepath)
+	if err != nil {
+		return nil, err
+	}
+
+	// 関数終了時にファイルを閉じる
+	defer file.Close()
+
+	// スキャンナーを使用してファイルを行ごとに読み込む
+	var lines []string
+	scanner := bufio.NewScanner(file)
+
+	// 各行をスライスに追加
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+
+	// 読み込み中にエラーが発生した場合はそれを返す
+	if err := scanner.Err(); err != nil {
+		return nil, err
+	}
+
+	return lines, nil
+}
