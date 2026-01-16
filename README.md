@@ -13,7 +13,7 @@ Go言語復習用のログ集約ツール（標準ライブラリのみ使用）
 - [x] ログパース機能
 - [x] データ集約機能
 - [x] 統合処理（ファイル処理パイプライン）
-- [ ] HTTP API
+- [x] HTTP API
 - [ ] 並行処理
 - [ ] リアルタイム監視
 
@@ -21,3 +21,21 @@ Go言語復習用のログ集約ツール（標準ライブラリのみ使用）
 - Git Flowを使用
 - 標準ライブラリのみ使用
 - テスト駆動開発
+
+## 使い方
+
+### サーバー起動
+```bash
+go run cmd/logagg/main.go
+```
+
+### API使用例
+```bash
+# ヘルスチェック
+curl http://localhost:8080/health
+
+# ログ解析
+curl -X POST http://localhost:8080/analyze \
+  -H "Content-Type: application/json" \
+  -d '{"filepath": "sample.log"}'
+```
