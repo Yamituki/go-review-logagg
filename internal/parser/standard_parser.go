@@ -2,6 +2,7 @@ package parser
 
 /*
  * time パッケージは時間の操作を提供します。
+ * fmt パッケージはフォーマットされたI/Oを提供します。
  */
 import (
 	"fmt"

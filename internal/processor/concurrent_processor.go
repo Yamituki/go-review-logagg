@@ -1,5 +1,9 @@
 package processor
 
+/*
+ * fmt パッケージはフォーマットされたI/Oを提供します
+ * sync パッケージは基本的な同期プリミティブを提供します。
+ */
 import (
 	"fmt"
 	"sync"

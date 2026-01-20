@@ -15,7 +15,7 @@ Go言語復習用のログ集約ツール（標準ライブラリのみ使用）
 - [x] 統合処理（ファイル処理パイプライン）
 - [x] HTTP API
 - [x] 並行処理
-- [ ] リアルタイム監視
+- [x] リアルタイム監視
 
 ## 開発方針
 - Git Flowを使用
@@ -39,3 +39,6 @@ curl -X POST http://localhost:8080/analyze \
   -H "Content-Type: application/json" \
   -d '{"filepath": "sample.log"}'
 ```
+
+## 制限事項
+- リアルタイム監視はファイル全体を再読み込みするため、非常に大きなファイル（数GB以上）には向きません
