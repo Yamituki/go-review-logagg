@@ -1,5 +1,10 @@
 package server
 
+/*
+ * encoding/json パッケージは JSON エンコードとデコードを提供します
+ * fmt パッケージはフォーマットされたI/Oを提供します
+ * net/http パッケージは HTTP クライアントとサーバーの実装を提供します
+ */
 import (
 	"encoding/json"
 	"fmt"

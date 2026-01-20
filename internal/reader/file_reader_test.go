@@ -1,10 +1,5 @@
 package reader
 
-/*
- * os パッケージはOSの機能（ファイル操作など）を提供します
- * testing パッケージはテストのサポートを提供します。
- * path/filepath パッケージはファイルパスの操作を提供します。
- */
 import (
 	"os"
 	"path/filepath"
